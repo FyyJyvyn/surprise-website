@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>For My Bebe ❤️</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: #fff5f7;
+      color: #4a3038;
+      overflow-x: hidden;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    /* =========================
+       OPENING
+    ========================= */
+
+    .home {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 30px;
+      background:
+        radial-gradient(circle at 20% 20%, #ffe0e8 0, transparent 30%),
+        radial-gradient(circle at 80% 80%, #f9d4df 0, transparent 30%),
+        #fff5f7;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .opening {
+      max-width: 700px;
+      animation: fadeUp 1.5s ease;
+      z-index: 2;
+    }
+
+    .opening-top {
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: #a87884;
+      margin-bottom: 25px;
+    }
+
+    .opening-heart {
+      font-size: 70px;
+      color: #c98295;
+      animation: heartbeat 2s infinite;
+      margin-bottom: 10px;
+    }
+
+    .opening-title {
+      font-size: clamp(42px, 8vw, 75px);
+      font-weight: normal;
+      line-height: 1;
+      color: #593842;
+    }
+
+    .opening-title span {
+      display: block;
+      font-style: italic;
+      color: #b7657d;
+    }
+
+    .opening-subtitle {
+      max-width: 560px;
+      margin: 30px auto;
+      line-height: 1.8;
+      color: #765660;
+      font-size: 16px;
+    }
+
+    .open-button {
+      border: 1px solid #c98a9b;
+      background: rgba(255,255,255,.6);
+      color: #9e566d;
+      padding: 15px 30px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 15px;
+      transition: .3s;
+      box-shadow: 0 0 20px rgba(190,110,135,.15);
+    }
+
+    .open-button:hover {
+      background: #b7657d;
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(150,80,105,.25);
+    }
+
+    .opening-footer {
+      margin-top: 40px;
+      font-size: 12px;
+      color: #b28b95;
+      letter-spacing: 1px;
+    }
+
+    /* =========================
+       MENU
+    ========================= */
+
+    .menu {
+      min-height: 100vh;
+      padding: 70px 25px;
+      display: none;
+      text-align: center;
+      background: #fff8fa;
+    }
+
+    .menu.show {
+      display: block;
+      animation: fadeUp 1s ease;
+    }
+
+    .small {
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: #aa7180;
+      margin-bottom: 15px;
+    }
+
+    .menu h2 {
+      font-size: clamp(38px, 7vw, 65px);
+      font-weight: normal;
+      line-height: 1;
+      color: #5a3b44;
+      margin-bottom: 50px;
+    }
+
+    .menu h2 span {
+      color: #b7657d;
+      font-style: italic;
+    }
+
+    .cards {
+      max-width: 850px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #efdde2;
+      padding: 35px 25px;
+      min-height: 190px;
+      cursor: pointer;
+      transition: .35s;
+      box-shadow: 0 10px 30px rgba(100,50,70,.05);
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(100,50,70,.12);
+      border-color: #d8a0ae;
+    }
+
+    .card-icon {
+      font-size: 35px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      font-size: 23px;
+      font-weight: normal;
+      color: #68424e;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 13px;
+      color: #a17c85;
+    }
+
+    /* =========================
+       PAGE
+    ========================= */
+
+    .page {
+      display: none;
+      min-height: 100vh;
+      padding: 70px 25px;
+      text-align: center;
+      background: #fff8fa;
+      animation: fadeUp .8s ease;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    .back {
+      position: absolute;
+      top: 25px;
+      left: 25px;
+      border: none;
+      background: transparent;
+      color: #9c6373;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .page h2 {
+      font-size: clamp(42px, 8vw, 70px);
+      font-weight: normal;
+      line-height: 1;
+      color: #593842;
+      margin-bottom: 40px;
+    }
+
+    .page h2 span {
+      color: #b7657d;
+      font-style: italic;
+    }
+
+    /* =========================
+       LETTER
+    ========================= */
+
+    .letter {
+      max-width: 700px;
+      margin: auto;
+      background: #fffdf8;
+      padding: 55px;
+      text-align: left;
+      box-shadow: 0 20px 50px rgba(80,40,50,.08);
+      border: 1px solid #eee1d7;
+      line-height: 1.9;
+    }
+
+    .letter .greeting {
+      font-size: 25px;
+      margin-bottom: 25px;
+      color: #815262;
+    }
+
+    .letter p {
+      margin-bottom: 20px;
+      color: #725761;
+      font-size: 15px;
+    }
+
+    .signature {
+      margin-top: 40px;
+      color: #9e5e72;
+      font-style: italic;
+      font-size: 18px;
+    }
+
+    /* =========================
+       PHOTOS
+    ========================= */
+
+    .photos-intro {
+      max-width: 550px;
+      margin: -20px auto 40px;
+      color: #85646d;
+      line-height: 1.7;
+    }
+
+    .photo-grid {
+      max-width: 950px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 35px;
+    }
+
+    .polaroid {
+      background: white;
+      padding: 12px 12px 25px;
+      box-shadow: 0 15px 30px rgba(80,40,50,.1);
+      cursor: pointer;
+      transition: .35s;
+    }
+
+    .polaroid:nth-child(odd) {
+      transform: rotate(-2deg);
+    }
+
+    .polaroid:nth-child(even) {
+      transform: rotate(2deg);
+    }
+
+    .polaroid:hover {
+      transform: rotate(0) scale(1.03);
+    }
+
+    .polaroid img {
+      width: 100%;
+      height: 330px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .caption {
+      padding-top: 15px;
+      font-size: 17px;
+      color: #704653;
+    }
+
+    .caption small {
+      display: block;
+      margin-top: 5px;
+      font-family: Arial, sans-serif;
+      font-size: 9px;
+      letter-spacing: 3px;
+      color: #b08a93;
+    }
+
+    /* =========================
+       PHOTO VIEWER
+    ========================= */
+
+    .photo-viewer {
+      position: fixed;
+      inset: 0;
+      background: rgba(35,20,25,.93);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+      padding: 25px;
+    }
+
+    .photo-viewer.show {
+      display: flex;
+    }
+
+    .photo-viewer img {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+      border: 8px solid white;
+      box-shadow: 0 20px 60px rgba(0,0,0,.4);
+    }
+
+    .close-photo {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      color: white;
+      font-size: 35px;
+      cursor: pointer;
+    }
+
+    /* =========================
+       MUSIC
+    ========================= */
+
+    .music {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 50px 30px;
+      box-shadow: 0 20px 50px rgba(80,40,50,.08);
+      border: 1px solid #efdde2;
+    }
+
+    .album {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 25px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #f1c6d2, #d991a7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 55px;
+      animation: spin 8s linear infinite;
+      animation-play-state: paused;
+    }
+
+    .music h3 {
+      font-size: 25px;
+      font-weight: normal;
+      color: #68424e;
+      margin-bottom: 10px;
+    }
+
+    .music p {
+      color: #98757e;
+      margin-bottom: 25px;
+    }
+
+    audio {
+      width: 100%;
+      max-width: 450px;
+    }
+
+    /* =========================
+       GIFT
+    ========================= */
+
+    .gift-box {
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .gift {
+      font-size: 130px;
+      cursor: pointer;
+      display: inline-block;
+      margin: 20px 0;
+      transition: .3s;
+    }
+
+    .gift:hover {
+      transform: scale(1.1);
+    }
+
+    .gift-hint {
+      color: #98757e;
+      margin-bottom: 30px;
+    }
+
+    .gift-message {
+      display: none;
+      max-width: 650px;
+      margin: 30px auto 0;
+      line-height: 1.9;
+      animation: fadeUp 1.2s ease;
+    }
+
+    .gift-message.show {
+      display: block;
+    }
+
+    .gift-message h3 {
+      font-size: 18px;
+      letter-spacing: 3px;
+      color: #a76b7c;
+      margin-bottom: 20px;
+    }
+
+    .gift-message h4 {
+      font-size: 45px;
+      font-weight: normal;
+      color: #b7657d;
+      font-style: italic;
+      margin-top: 30px;
+    }
+
+    .gift-message p {
+      color: #765660;
+      margin-bottom: 18px;
+    }
+
+    /* =========================
+       CREDIT
+    ========================= */
+
+    .credit {
+      text-align: center;
+      padding: 45px 20px;
+      background: #fff8fa;
+      color: #a87884;
+      font-family: Arial, sans-serif;
+      border-top: 1px solid #f0dfe4;
+    }
+
+    .credit p {
+      margin-bottom: 8px;
+      font-size: 13px;
+    }
+
+    .credit small {
+      font-size: 10px;
+      letter-spacing: 2px;
+      opacity: .7;
+    }
+
+    /* =========================
+       FLOATING HEARTS
+    ========================= */
+
+    .heart {
+      position: fixed;
+      bottom: -30px;
+      color: #d88ea3;
+      pointer-events: none;
+      animation: floatHeart linear forwards;
+      z-index: 1;
+    }
+
+    /* =========================
+       ANIMATIONS
+    ========================= */
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes heartbeat {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.15);
+      }
+    }
+
+    @keyframes floatHeart {
+      from {
+        transform: translateY(0) rotate(0);
+        opacity: 0;
+      }
+
+      15% {
+        opacity: .8;
+      }
+
+      to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes giftShake {
+      0%, 100% {
+        transform: rotate(0);
+      }
+
+      20% {
+        transform: rotate(-10deg);
+      }
+
+      40% {
+        transform: rotate(10deg);
+      }
+
+      60% {
+        transform: rotate(-8deg);
+      }
+
+      80% {
+        transform: rotate(8deg);
+      }
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .gift-opening {
+      animation: giftShake .8s ease;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 650px) {
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .letter {
+        padding: 30px 22px;
+      }
+
+      .polaroid img {
+        height: 300px;
+      }
+
+      .gift {
+        font-size: 100px;
+      }
+
+      .opening-subtitle {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       OPENING
+  ========================= -->
+
+  <section id="home" class="home">
+
+    <div class="opening">
+
+      <p class="opening-top">
+        A LITTLE SOMETHING FOR SOMEONE SPECIAL
+      </p>
+
+      <div class="opening-heart">
+        ♡
+      </div>
+
+      <h1 class="opening-title">
+        Happy <span>Girlfriend Day</span>
+      </h1>
+
+      <p class="opening-subtitle">
+        Bebe, aku bikin sesuatu kecil khusus buat bebe.
+        Jadi sebelum lihat semuanya... tarik napas dulu,
+        terus buka pelan-pelan. ❤️
+      </p>
+
+      <button class="open-button" onclick="openMenu()">
+        Open Your Surprise 💌
+      </button>
+
+      <p class="opening-footer">
+        made with love, especially for bebe ♡
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       MENU
+  ========================= -->
+
+  <section id="menu" class="menu">
+
+    <p class="small">
+      JUST FOR BEBE
+    </p>
+
+    <h2>
+      A Few Little<br>
+      <span>Things For Bebe</span>
+    </h2>
+
+    <div class="cards">
+
+      <div class="card" onclick="openPage('letter')">
+        <div class="card-icon">💌</div>
+
+        <h3>
+          A Letter For Bebe
+        </h3>
+
+        <p>
+          Something I want to say
+        </p>
+      </div>
+
+
+      <div class="card" onclick="openPage('photos')">
+        <div class="card-icon">📸</div>
+
+        <h3>
+          Your Beautiful Moments
+        </h3>
+
+        <p>
+          Some photos I love
+        </p>
+      </div>
+
+
+      <div class="card" onclick="openPage('playlist')">
+        <div class="card-icon">🎵</div>
+
+        <h3>
+          A Song For Bebe
+        </h3>
+
+        <p>
+          Press play when you're ready
+        </p>
+      </div>
+
+
+      <div class="card" onclick="openPage('gift')">
+        <div class="card-icon">🎁</div>
+
+        <h3>
+          One Last Thing
+        </h3>
+
+        <p>
+          Save this one for last
+        </p>
+      </div>
+
+    </div>
+
+
+    <!-- CREDIT -->
+
+    <footer class="credit">
+
+      <p>
+        Made with love by Rafi Ganteng ♡
+      </p>
+
+      <small>
+        Designed, coded & created by Rafi 😎
+      </small>
+
+    </footer>
+
+  </section>
+
+
+  <!-- =========================
+       LETTER
+  ========================= -->
+
+  <section id="letter" class="page">
+
+    <button class="back" onclick="backToMenu()">
+      ← BACK
+    </button>
+
+    <p class="small">
+      A LITTLE LETTER
+    </p>
+
+    <h2>
+      For<br>
+      <span>My Bebe</span>
+    </h2>
+
+
+    <div class="letter">
+
+      <div class="greeting">
+        Dear bebe,
+      </div>
+
+      <p>
+        Happy Girlfriend Day, bebe. ❤️
+      </p>
+
+      <p>
+        Aku sebenarnya sempat bingung mau kasih bebe apa.
+        Aku pengen kasih sesuatu yang bukan cuma barang,
+        tapi sesuatu yang bisa bebe buka lagi kapan pun
+        bebe mau.
+      </p>
+
+      <p>
+        Jadi akhirnya aku bikin ini.
+        Memang sederhana, tapi setiap bagian di dalamnya
+        aku buat sambil mikirin bebe.
+      </p>
+
+      <p>
+        Bebe mungkin nggak sadar, tapi ada banyak hal kecil
+        dari bebe yang aku suka. Cara bebe tersenyum,
+        cara bebe cerita, cara bebe bercanda,
+        bahkan hal-hal kecil yang mungkin menurut bebe
+        biasa aja.
+      </p>
+
+      <p>
+        Buat aku, hal-hal kecil itu justru yang bikin bebe
+        jadi seseorang yang spesial.
+      </p>
+
+      <p>
+        Aku juga mau bebe tahu kalau bebe nggak harus
+        selalu kuat. Kalau suatu hari bebe lagi capek,
+        nggak apa-apa buat istirahat.
+        Nggak apa-apa kalau semuanya terasa berat.
+      </p>
+
+      <p>
+        Aku mungkin nggak selalu bisa memberikan hal-hal besar,
+        tapi aku harap bebe selalu tahu kalau ada seseorang
+        yang benar-benar menghargai keberadaan bebe.
+      </p>
+
+      <p>
+        Terima kasih sudah menjadi seseorang yang begitu berarti.
+        Semoga hadiah kecil ini bisa bikin bebe tersenyum
+        hari ini, walaupun cuma sebentar.
+      </p>
+
+      <div class="signature">
+        With all my love,<br>
+        untuk bebe ♡
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       PHOTOS
+  ========================= -->
+
+  <section id="photos" class="page">
+
+    <button class="back" onclick="backToMenu()">
+      ← BACK
+    </button>
+
+    <p class="small">
+      A FEW BEAUTIFUL THINGS
+    </p>
+
+    <h2>
+      Beautiful<br>
+      <span>Moments</span>
+    </h2>
+
+    <p class="photos-intro">
+      Beberapa foto yang menurutku terlalu cantik
+      untuk cuma disimpan di galeri. ❤️
+    </p>
+
+
+    <div class="photo-grid">
+
+      <div class="polaroid" onclick="showPhoto(this)">
+
+        <img
+          src="images/foto1.jpg"
+          alt="Foto bebe"
+        >
+
+        <div class="caption">
+          You look beautiful.
+
+          <small>
+            A LITTLE MEMORY ♡
+          </small>
+        </div>
+
+      </div>
+
+
+      <div class="polaroid" onclick="showPhoto(this)">
+
+        <img
+          src="images/foto2.jpg"
+          alt="Foto bebe"
+        >
+
+        <div class="caption">
+          This one is special.
+
+          <small>
+            JUST FOR BEBE ♡
+          </small>
+        </div>
+
+      </div>
+
+
+      <div class="polaroid" onclick="showPhoto(this)">
+
+        <img
+          src="images/foto3.jpg"
+          alt="Foto bebe"
+        >
+
+        <div class="caption">
+          Keep smiling.
+
+          <small>
+            YOUR BEAUTIFUL SMILE ♡
+          </small>
+        </div>
+
+      </div>
+
+
+      <div class="polaroid" onclick="showPhoto(this)">
+
+        <img
+          src="images/foto4.jpg"
+          alt="Foto bebe"
+        >
+
+        <div class="caption">
+          One more for bebe.
+
+          <small>
+            WITH LOVE ♡
+          </small>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       MUSIC
+  ========================= -->
+
+  <section id="playlist" class="page">
+
+    <button class="back" onclick="backToMenu()">
+      ← BACK
+    </button>
+
+    <p class="small">
+      A SONG FOR BEBE
+    </p>
+
+    <h2>
+      Press<br>
+      <span>Play ♡</span>
+    </h2>
+
+
+    <div class="music">
+
+      <div class="album">
+        🎵
+      </div>
+
+      <h3>
+        A Special Song
+      </h3>
+
+      <p>
+        Lagu kecil yang aku pilih khusus buat bebe ❤️
+      </p>
+
+
+      <audio id="mySong" controls>
+
+        <source
+          src="music/lagu.mp3"
+          type="audio/mpeg"
+        >
+
+        Browser bebe nggak mendukung audio player.
+
+      </audio>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       GIFT
+  ========================= -->
+
+  <section id="gift" class="page">
+
+    <button class="back" onclick="backToMenu()">
+      ← BACK
+    </button>
+
+    <p class="small">
+      THE LAST SURPRISE
+    </p>
+
+    <h2>
+      Something<br>
+      <span>For Bebe ♡</span>
+    </h2>
+
+
+    <div class="gift-box">
+
+      <div
+        class="gift"
+        id="giftBox"
+        onclick="openGift()"
+      >
+        🎁
+      </div>
+
+
+      <p class="gift-hint">
+        Klik hadiahnya pelan-pelan, bebe ❤️
+      </p>
+
+
+      <div
+        class="gift-message"
+        id="giftMessage"
+      >
+
+        <h3>
+          ONE LAST THING
+        </h3>
+
+
+        <p>
+          Kalau bebe sudah sampai di sini...
+        </p>
+
+        <p>
+          Sebenarnya hadiah terakhir ini bukan sesuatu
+          yang bisa dibungkus.
+        </p>
+
+        <p>
+          Aku cuma mau kasih satu pesan yang mungkin sederhana...
+          tapi aku benar-benar maksudkan.
+        </p>
+
+        <p>
+          <strong>
+            Jangan pernah lupa kalau bebe itu berharga.
+          </strong>
+        </p>
+
+        <p>
+          Bebe pantas untuk bahagia, pantas untuk disayangi,
+          dan pantas mendapatkan banyak hal baik.
+        </p>
+
+        <p>
+          Kalau suatu hari bebe merasa nggak cukup baik,
+          baca lagi bagian ini.
+        </p>
+
+        <p>
+          Karena buat seseorang, senyum bebe mungkin adalah
+          hal kecil yang berarti lebih banyak dari yang bebe kira.
+        </p>
+
+
+        <h4>
+          I Love You, Bebe. ❤️
+        </h4>
+
+        <p class="small">
+          AND I HOPE YOU ALWAYS KNOW THAT
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       PHOTO VIEWER
+  ========================= -->
+
+  <div
+    class="photo-viewer"
+    id="photoViewer"
+    onclick="closePhoto()"
+  >
+
+    <div class="close-photo">
+      ×
+    </div>
+
+    <img
+      id="fullPhoto"
+      src=""
+      alt="Foto bebe"
+    >
+
+  </div>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
+  <script>
+
+    let giftOpened = false;
+
+
+    function openMenu() {
+
+      const home =
+        document.getElementById("home");
+
+      const menu =
+        document.getElementById("menu");
+
+      home.style.display = "none";
+
+      menu.classList.add("show");
+
+      window.scrollTo(0, 0);
+    }
+
+
+    function openPage(id) {
+
+      document.getElementById("menu").style.display = "none";
+
+      document
+        .querySelectorAll(".page")
+        .forEach(function(page) {
+
+          page.classList.remove("active");
+
+        });
+
+      document
+        .getElementById(id)
+        .classList.add("active");
+
+      window.scrollTo(0, 0);
+    }
+
+
+    function backToMenu() {
+
+      document
+        .querySelectorAll(".page")
+        .forEach(function(page) {
+
+          page.classList.remove("active");
+
+        });
+
+      document.getElementById("menu").style.display = "block";
+
+      document
+        .getElementById("menu")
+        .classList.add("show");
+
+      window.scrollTo(0, 0);
+    }
+
+
+    function showPhoto(element) {
+
+      const image =
+        element.querySelector("img");
+
+      document
+        .getElementById("fullPhoto")
+        .src = image.src;
+
+      document
+        .getElementById("photoViewer")
+        .classList.add("show");
+    }
+
+
+    function closePhoto() {
+
+      document
+        .getElementById("photoViewer")
+        .classList.remove("show");
+    }
+
+
+    function openGift() {
+
+      if (giftOpened) return;
+
+      giftOpened = true;
+
+      const gift =
+        document.getElementById("giftBox");
+
+      const message =
+        document.getElementById("giftMessage");
+
+      gift.classList.add("gift-opening");
+
+
+      setTimeout(function() {
+
+        gift.style.display = "none";
+
+        document
+          .querySelector(".gift-hint")
+          .style.display = "none";
+
+        message.classList.add("show");
+
+        createHeartBurst();
+
+
+        for (let i = 0; i < 35; i++) {
+
+          setTimeout(function() {
+
+            createHeart();
+
+          }, i * 100);
+
+        }
+
+      }, 800);
+    }
+
+
+    function createHeartBurst() {
+
+      for (let i = 0; i < 24; i++) {
+
+        const heart =
+          document.createElement("div");
+
+        heart.innerHTML = "♥";
+
+        heart.style.position = "fixed";
+
+        heart.style.left = "50%";
+
+        heart.style.top = "50%";
+
+        heart.style.fontSize =
+          (12 + Math.random() * 22) + "px";
+
+        heart.style.color = "#d88ea3";
+
+        heart.style.pointerEvents = "none";
+
+        heart.style.zIndex = "1000";
+
+
+        const angle =
+          Math.random() * Math.PI * 2;
+
+        const distance =
+          100 + Math.random() * 250;
+
+        const x =
+          Math.cos(angle) * distance;
+
+        const y =
+          Math.sin(angle) * distance;
+
+
+        heart.animate(
+
+          [
+            {
+              transform:
+                "translate(-50%, -50%) scale(1)",
+
+              opacity: 1
+            },
+
+            {
+              transform:
+                `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) scale(0)`,
+
+              opacity: 0
+            }
+          ],
+
+          {
+            duration:
+              1200 + Math.random() * 600,
+
+            easing: "ease-out"
+          }
+
+        );
+
+
+        document.body.appendChild(heart);
+
+
+        setTimeout(function() {
+
+          heart.remove();
+
+        }, 2000);
+
+      }
+
+    }
+
+
+    function createHeart() {
+
+      const heart =
+        document.createElement("div");
+
+      heart.className = "heart";
+
+      heart.innerHTML =
+        Math.random() > .5
+          ? "♥"
+          : "♡";
+
+
+      heart.style.left =
+        Math.random() * 100 + "vw";
+
+
+      heart.style.fontSize =
+        (12 + Math.random() * 20) + "px";
+
+
+      heart.style.animationDuration =
+        (5 + Math.random() * 5) + "s";
+
+
+      document.body.appendChild(heart);
+
+
+      setTimeout(function() {
+
+        heart.remove();
+
+      }, 10000);
+
+    }
+
+
+    setInterval(function() {
+
+      createHeart();
+
+    }, 900);
+
+
+    const song =
+      document.getElementById("mySong");
+
+    const album =
+      document.querySelector(".album");
+
+
+    song.addEventListener(
+      "play",
+      function() {
+
+        album.style.animationPlayState =
+          "running";
+
+      }
+    );
+
+
+    song.addEventListener(
+      "pause",
+      function() {
+
+        album.style.animationPlayState =
+          "paused";
+
+      }
+    );
+
+
+    song.addEventListener(
+      "ended",
+      function() {
+
+        album.style.animationPlayState =
+          "paused";
+
+      }
+    );
+
+  </script>
+
+</body>
+</html>
